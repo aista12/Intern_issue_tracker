@@ -90,19 +90,22 @@ That means:
 
 ## Setup (Local)
 
-### 1) Clone
+### 1) clone
 ```bash
 git clone https://github.com/aista12/Intern_issue_tracker.git
 cd Intern_issue_tracker
+```
 
 ### 2) run backend
+```bash
 cd backend
 npm install
 npm run dev
-
+```
 ### 3) run frontend
+```bash
 cd frontend
 npm install
 npm run dev
-
+```
 
