@@ -95,17 +95,29 @@ That means:
 git clone https://github.com/aista12/Intern_issue_tracker.git
 cd Intern_issue_tracker
 ```
-
-### 2) run backend
+### 2) setting up .env
+```bash
+DATABASE_URL=postgres://issue_tracker_user:password@localhost:5432/issue_tracker
+JWT_SECRET=so_long_London_stiches_undone_two_graves_one_gun_u_will_find_someone
+JWT_EXPIRES_IN=2h
+PORT=3000
+CORS_ORIGIN=http://localhost:5173
+```
+```bash
+VITE_API_URL=http://localhost:3000
+```
+### 3) run backend
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-### 3) run frontend
+### 4) run frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+## Schema link: 
+https://dbdiagram.io/d/6974b9e7bd82f5fce27ada0a
 
