@@ -94,3 +94,15 @@ That means:
 ```bash
 git clone https://github.com/aista12/Intern_issue_tracker.git
 cd Intern_issue_tracker
+
+### 2) run backend
+cd backend
+npm install
+npm run dev
+
+### 3) run frontend
+cd frontend
+npm install
+npm run dev
+
+
