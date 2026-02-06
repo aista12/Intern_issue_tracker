@@ -122,5 +122,5 @@ npm run dev
 https://dbdiagram.io/d/6974b9e7bd82f5fce27ada0a
 
 ## Doc:
-check ```bash http://localhost:3000/docs/#/ ``` for swagger doc
+check ``` http://localhost:3000/docs/#/ ``` for swagger doc
 
