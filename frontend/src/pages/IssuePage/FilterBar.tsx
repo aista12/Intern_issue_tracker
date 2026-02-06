@@ -7,8 +7,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import type { LabelType } from "@/types";
 
-type LabelType = { id: string; name: string; color: string };
 
 export function FiltersBar(props: {
   STATUS: readonly string[];

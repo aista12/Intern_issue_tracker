@@ -1,6 +1,5 @@
 import { LabelRepository } from "../repositories/label.repository";
 import { Label } from "../types";
-import { count } from "node:console";
 
 export class LabelService {
     private label: LabelRepository;

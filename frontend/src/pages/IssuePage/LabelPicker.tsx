@@ -1,6 +1,6 @@
+import type { LabelType } from "@/types";
 import { Trash2 } from "lucide-react";
 
-type LabelType = { id: string; name: string; color: string };
 
 export function LabelPicker(props: {
   labels: LabelType[];

@@ -16,7 +16,7 @@ export class AuthService {
     ): Promise<{ id: string; name: string; email: string }> {
         const existing = await this.users.findByEmail(email);
         if (existing) {
-            throw new Error("this email has been registered already");
+            throw new Error("invalid email or password");
         }
 
         const passwordHash = await bcrypt.hash(password, 10);

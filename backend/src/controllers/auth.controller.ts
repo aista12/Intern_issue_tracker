@@ -10,7 +10,6 @@ export class AuthController {
 
     register = async (req: Request, res: Response) => {
         const { name, email, password } = req.body;
-        console.log("REGISTER BODY:", req.body);
 
 
         if (
@@ -31,7 +30,6 @@ export class AuthController {
                 email,
                 password,
             );
-            console.log("registered user:", user);
             return res.status(201).json(user);
         } catch (e: any) {
             console.error("error in register:", e);

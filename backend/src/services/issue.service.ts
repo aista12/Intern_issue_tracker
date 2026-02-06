@@ -8,18 +8,6 @@ export class IssueService {
         this.issue = issueRepository;
     }
 
-    // async createIssue(
-    //     issueData: any,
-    //     userId: string,
-    // ): Promise<Issue> {
-    //     return this.issue.createIssue({
-    //         title: issueData.title,
-    //         description: issueData.description,
-    //         status: issueData.status,
-    //         priority: issueData.priority,
-    //         created_by_id: userId,
-    //     });
-    // }
 
     async createIssue(issueData: Issue, userId: string) {
         const issue: Issue = {
@@ -44,16 +32,15 @@ export class IssueService {
     async getIssueById(id: string): Promise<IssueDetailRow | null> {
         return await this.issue.findById(id);
 
-        // const labels = await this.issue.findLabelsByIssueId(id);
-        // return { ...issue, labels };
     }
 
     async deleteIssue(issueId: string, userId: string): Promise<void> {
         const deleted = await this.issue.deleteById(issueId, userId);
 
         if(deleted ===0) {
-            const err: any = new Error("Forbidden");
-            err.status = 403;
+            const err = new Error("Forbidden");
+            err.name = "Forbidden";
+            (err as any).status = 403;
             throw err;
         }
     }

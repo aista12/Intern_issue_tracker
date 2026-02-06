@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { createIssue, listIssues, type IssueRow, addLabelsToIssue } from "@/api/issues";
+import { createIssue, listIssues, addLabelsToIssue } from "@/api/issues";
 import { createLabel, deleteLabel, listLabels } from "@/api/labels";
+import type { IssueRow } from "@/types";
 
 const STATUS = ["all", "todo", "in_progress", "done", "cancelled"] as const;
 

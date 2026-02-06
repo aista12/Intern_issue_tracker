@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { LabelService } from "../services/label.service";
 
-type id = { id: string };
 
 export class LabelController {
     private labelService: LabelService;
@@ -42,29 +41,6 @@ export class LabelController {
         );
         res.status(200).json(label);
     };
-
-    // deleteLabel = async (req: Request<id>, res: Response) => {
-    //     try {
-    //         const id = req.params.id;
-    //         await this.labelService.deleteLabel(id);
-    //         return res.status(204).send();
-    //     } catch (e: any) {
-    //         if (e?.code === "23503") {
-    //             return res
-    //                 .status(409)
-    //                 .json({
-    //                     error: {
-    //                         message: "label is used by some issues",
-    //                     },
-    //                 });
-    //         }
-    //         return res
-    //             .status(500)
-    //             .json({ error: { message: "internal error" } });
-    //     }
-
-    //     //23503 is fk violation err from pgsql
-    // };
 
     deleteLabel = async (req: Request<{ id: string }>, res: Response) => {
         try {

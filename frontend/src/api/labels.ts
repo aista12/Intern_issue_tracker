@@ -1,6 +1,6 @@
+import type { Label } from "@/types";
 import { apiFetch } from "./client";
 
-export type Label = { id: string; name: string; color: string };
 
 export function listLabels() {
   return apiFetch<Label[]>("/labels");

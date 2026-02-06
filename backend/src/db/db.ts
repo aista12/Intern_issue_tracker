@@ -12,5 +12,3 @@ if (!connectionString) {
 export const db = new Pool({
     connectionString,
 });
-
-console.log("DB URL =", process.env.DATABASE_URL);

@@ -9,23 +9,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import type { IssueRowUI } from "@/types";
 
 function StatusBadge({ s }: { s: "todo" | "in_progress" | "done" | "cancelled" }) {
   return <Badge variant="secondary">{s}</Badge>;
 }
-
-type LabelType = { id: string; name: string; color: string };
-
-export type IssueRowUI = {
-  issue_no: number;
-  id: string;
-  title: string;
-  description: string | null;
-  status: "todo" | "in_progress" | "done" | "cancelled";
-  priority: "low" | "medium" | "high";
-  labels: LabelType[];
-  created_by_id: string;
-};
 
 export function IssuesTable(props: {
   page: number;

@@ -1,21 +1,6 @@
+import type { IssueDetail, IssueRow } from "@/types";
 import { apiFetch } from "./client";
-import type { Label } from "./labels";
 
-export type IssueRow = {
-  issue_no: number;
-  id: string;
-  title: string;
-  description: string | null;
-  status: "todo" | "in_progress" | "done" | "cancelled";
-  priority: "low" | "medium" | "high";
-  labels: Label[];
-  created_by_id: string;
-};
-
-export type IssueDetail = IssueRow & {
-  created_by_name: string;
-  created_by_email: string;
-};
 
 export function listIssues(params: {
   page: number;

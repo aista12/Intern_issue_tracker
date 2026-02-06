@@ -23,55 +23,6 @@ export class IssueRepository {
 
 
 
-
-//     async findAll(opts: {
-//         page: number;
-//         limit: number;
-//         status?: string;
-//         search?: string;
-//         labelId?: string;
-//         }): Promise<IssueRow[]> {
-//         let query = `
-//             SELECT i.issue_no, i.id, i.title, i.description, i.status, i.priority, i.created_by_id
-//             FROM issues i
-//         `;
-
-
-//         if (opts.labelId) {
-//             query += `
-//             JOIN issue_labels il ON il.issue_id = i.id
-//             `;
-//         }
-
-//         query += ` WHERE 1=1 `;
-//         const params: any[] = [];
-
-//         if (opts.status) {
-//             params.push(opts.status);
-//             query += ` AND i.status = $${params.length}`;
-//         }
-
-//         if (opts.search) {
-//             params.push(`%${opts.search}%`);
-//             query += ` AND i.title ILIKE $${params.length}`;
-//         }
-
-//         if (opts.labelId) {
-//             params.push(opts.labelId);
-//             query += ` AND il.label_id = $${params.length}`;
-//         }
-
-//         query += ` ORDER BY i.issue_no DESC`;
-
-//         params.push(opts.limit);
-//         params.push((opts.page - 1) * opts.limit);
-
-//         query += ` LIMIT $${params.length - 1} OFFSET $${params.length}`;
-
-//         const { rows } = await db.query<IssueRow>(query, params);
-//         return rows;
-// }
-
     async findAll(opts: {
         page: number;
         limit: number;
@@ -135,18 +86,6 @@ export class IssueRepository {
         return rows;
         }
 
-
-    // async findById(id: string): Promise<IssueWithLabels | null> {
-    //     const { rows } = await db.query<IssueWithLabels>(
-    //         `
-    //       SELECT i.issue_no, i.id, i.title, i.description, i.status, i.priority, i.created_by_id
-    //       FROM issues i
-    //       WHERE i.id = $1
-    //     `,
-    //         [id],
-    //     );
-    //     return rows[0] ?? null;
-    // }
 
     async findById(id: string): Promise<IssueDetailRow | null> {
         const { rows } = await db.query<IssueDetailRow>(

@@ -1,9 +1,4 @@
-export type AuthUser = {
-  id: string;
-  name: string;
-  email: string;
-};
-
+import type { AuthUser } from "@/types";
 const KEY = "issue_tracker_user";
 
 export const authUser = {

@@ -35,8 +35,6 @@ export enum Priority {
 }
 
 
-//:TODO 
-//check those ->
 
 export type IssueRow = {
   issue_no: number;
@@ -53,4 +51,3 @@ export type IssueDetailRow = IssueWithLabels & {
   created_by_name: string;
   created_by_email: string;
 }
-

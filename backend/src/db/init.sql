@@ -34,9 +34,5 @@ CREATE TABLE IF NOT EXISTS issue_labels (
 );
 
 
--- //TODO 
--- check those ->
--- CREATE INDEX IF NOT EXISTS idx_issues_created_by_id ON issues(created_by_id);
--- CREATE INDEX IF NOT EXISTS idx_issues_status ON issues(status);
--- CREATE INDEX IF NOT EXISTS idx_issues_priority ON issues(priority);
--- CREATE INDEX IF NOT EXISTS idx_issue_labels_label_id ON issue_labels(label_id);
+CREATE INDEX IF NOT EXISTS idx_issues_status ON issues(status);
+CREATE INDEX IF NOT EXISTS idx_issue_labels_label_id ON issue_labels(label_id);

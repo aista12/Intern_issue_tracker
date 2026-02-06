@@ -1,6 +1,6 @@
+import type { AuthUser } from "@/types";
 import { apiFetch } from "./client";
 
-export type AuthUser = { id: string; name: string; email: string };
 
 export function login(email: string, password: string) {
   return apiFetch<{ token: string; user: AuthUser }>("/auth/login", {
