@@ -25,7 +25,7 @@ app.get("/docs.json", (_req, res) => res.json(swaggerSpec));
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/auth", authRoutes);
-
+ 
 app.use("/issues", requireAuth, issueRoutes);
 app.use("/labels", requireAuth, labelRoutes);
 
