@@ -16,7 +16,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({
+  origin: process.env.CORS_ORIGIN,
+  credentials: true
+}));
 
 app.get("/docs.json", (_req, res) => res.json(swaggerSpec));
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
