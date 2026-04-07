@@ -16,8 +16,19 @@ const app = express();
 
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://intern-issue-tracker.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
@@ -32,8 +43,10 @@ app.use("/labels", requireAuth, labelRoutes);
 app.use(errorMiddleware);
 
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 export default app;
